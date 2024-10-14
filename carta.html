@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carta de Cumpleaños</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #df1cb4;
+        }
+
+        #cartaForm {
+            background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
+            padding: 50px;
+            border-radius: 20px;
+            max-width: 800px;
+            margin: 20px auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            color: #333;
+            position: relative;
+            z-index: 2;
+        }
+
+        #cartaForm h2 {
+            color: #fff;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        #cartaForm p {
+            font-size: 1.2em;
+            color: #fff;
+            margin-bottom: 30px;
+        }
+
+        #cartaForm .carta-contenido {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            color: #333;
+            font-size: 1.2em;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        #cartaForm button {
+            background-color: #ff7f50;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 30px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        #cartaForm button:hover {
+            background-color: #ff4500;
+            transform: scale(1.1);
+        }
+
+        /* Globos */
+        .balloon {
+            width: 80px;
+            height: 120px;
+            background-color: rgba(255, 0, 0, 0.7);
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            position: absolute;
+            bottom: -150px;
+            animation: rise 10s infinite ease-in-out;
+        }
+
+        .balloon:before {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            width: 2px;
+            height: 30px;
+            background-color: #999;
+        }
+
+        /* Animación de los globos */
+        @keyframes rise {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-1200px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Globos de colores y tamaños diferentes */
+        .balloon:nth-child(1) {
+            background-color: rgba(255, 0, 0, 0.7);
+            left: 10%;
+            animation-duration: 8s;
+        }
+
+        .balloon:nth-child(2) {
+            background-color: rgba(0, 255, 0, 0.7);
+            left: 20%;
+            animation-duration: 7s;
+            animation-delay: 2s;
+        }
+
+        .balloon:nth-child(3) {
+            background-color: rgba(0, 0, 255, 0.7);
+            left: 30%;
+            animation-duration: 9s;
+            animation-delay: 4s;
+        }
+
+        .balloon:nth-child(4) {
+            background-color: rgba(255, 255, 0, 0.7);
+            left: 40%;
+            animation-duration: 6s;
+            animation-delay: 1s;
+        }
+
+        .balloon:nth-child(5) {
+            background-color: rgba(255, 0, 255, 0.7);
+            left: 50%;
+            animation-duration: 10s;
+            animation-delay: 3s;
+        }
+
+        .balloon:nth-child(6) {
+            background-color: rgba(0, 255, 255, 0.7);
+            left: 60%;
+            animation-duration: 8s;
+            animation-delay: 5s;
+        }
+
+        .balloon:nth-child(7) {
+            background-color: rgba(255, 165, 0, 0.7);
+            left: 70%;
+            animation-duration: 9s;
+            animation-delay: 2s;
+        }
+
+        .balloon:nth-child(8) {
+            background-color: rgba(75, 0, 130, 0.7);
+            left: 80%;
+            animation-duration: 7s;
+            animation-delay: 4s;
+        }
+
+        /* Ajustes responsive */
+        @media only screen and (max-width: 768px) {
+            #cartaForm {
+                padding: 30px;
+            }
+
+            #cartaForm h2 {
+                font-size: 2em;
+            }
+
+            #cartaForm p {
+                font-size: 1em;
+            }
+
+            #cartaForm .carta-contenido {
+                font-size: 1em;
+            }
+
+            #cartaForm button {
+                padding: 12px 24px;
+                font-size: 16px;
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+            #cartaForm {
+                padding: 20px;
+            }
+
+            #cartaForm h2 {
+                font-size: 1.8em;
+            }
+
+            #cartaForm p {
+                font-size: 0.9em;
+            }
+
+            #cartaForm .carta-contenido {
+                font-size: 0.9em;
+            }
+
+            #cartaForm button {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Globos animados -->
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+
+    <!-- Formulario de la carta -->
+    <div id="cartaForm">
+        <h2>Tu Carta de Cumpleaños</h2>
+        <p>Aquí tienes un mensaje especial para el cumpleañero</p>
+        <div class="carta-contenido">
+            ¡Feliz cumpleaños! 🎉🎂 Hoy es un día especial porque celebramos a una persona increíble <br>
+            que llena de luz y alegría la vida de quienes la rodean. Quiero que sepa lo mucho que la aprecio <br>
+            Mi deseo para ud es que cada momento esté lleno de felicidad, amor y éxitos. Que este nuevo año <br>
+            le traiga todas las cosas bonitas que merece. ¡Que sigas alcanzando sus sueños <br>
+            y siendo esa persona maravillosa que siempre inspira! 🎈✨ ¡Un abrazo enorme y espero haya disfrutado muchísimo tu día! 🥳🌟,<br><br>
+        </div>
+        <!-- Botón de regresar -->
+        <button type="button" onclick="goBack()">Regresar</button>
+    </div>
+
+    <script>
+        // Función para regresar al formulario de fotos
+        function goBack() {
+            window.location.href = "index.html";
+        }
+    </script>
+
+</body>
+</html>
